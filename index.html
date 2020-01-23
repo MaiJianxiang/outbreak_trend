@@ -2,97 +2,18 @@
 <html>
   <head>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>新型冠状病毒感染肺炎疫情趋势</title>
 	<link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-	<style type="text/css">
-		h1{
-			font-size: 32px;
-			text-align: center;
-		}
-		#subtitle{
-			color: #888;
-			text-align: center;
-			font-size: 14px;
-			line-height: 20px;
-		}
-		.map{
-			width: 100%;
-			max-width: 1125px;
-			display: block;
-			margin: 10px auto;
-		}
-		@media (max-width:767px){
-			h1{
-				font-size: 22px;
-			}
-		}
-	</style>
+	<style type="text/css"> h1{ font-size: 32px; text-align: center; } @media (max-width:767px){ h1{ font-size: 22px; } } #subtitle{ color: #888; text-align: center; font-size: 14px; line-height: 20px; } .map{ width: 100%; max-width: 1125px; display: block; margin: 10px auto; } </style> 
   </head>
   <body>
 	<h1>新型冠状病毒感染肺炎疫情趋势</h1>
 	<div id="container" />
 	<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.11/dist/g2.min.js"></script>
 	<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.2/dist/data-set.min.js"></script>
-	<script>
-	// 在一行中保存多个城市的数据，需要将数据转换成
-    // {month: 'Jan', city: 'Tokyo', temperature: 3.9}
-    const data = [
-      { date: '1月20日', 确诊: 291, 重症: null, 死亡: 6, 治愈:25 },
-      { date: '1月21日', 确诊: 440, 重症: 102, 死亡: 9, 治愈:28 },
-      { date: '1月22日', 确诊: 571, 重症: 95, 死亡: 17, 治愈:28 },
-    ];
-    const ds = new DataSet();
-    const dv = ds.createView().source(data);
-    // fold 方式完成了行列转换，如果不想使用 DataSet 直接手工转换数据即可
-    dv.transform({
-      type: 'fold',
-      fields: [ '确诊', '重症', '死亡', '治愈' ], // 展开字段集
-      key: 'type', // key字段
-      value: 'value' // value字段
-    });
-    const chart = new G2.Chart({
-      container: 'container',
-      forceFit: true,
-      height: 500
-    });
-    chart.source(dv, {
-      date: {
-        range: [ 0, .7 ]
-      }
-    });
-    chart.tooltip({
-      crosshairs: {
-        type: 'line'
-      }
-    });
-    chart.axis('value', {
-      label: {
-        formatter: val => {
-          return val + '例';
-        }
-      }
-    });
-    chart
-      .line()
-      .position('date*value')
-      .color('type', ['#178DF9', '#e00', '#422', '#0b0'])
-      .shape('smooth');
-    chart
-      .point()
-      .position('date*value')
-      .color('type', ['#178DF9', '#e00', '#422', '#0b0'])
-      .size(4)
-      .shape('circle')
-      .style({
-        stroke: '#fff',
-        lineWidth: 1
-      });
-    chart.render();
-	</script>
-	
-	
+	<script src="chart.js" type="text/javascript" charset="utf-8"></script>
 	<div id="subtitle">数据统计截至1月22日24时<br>每日上午10:00更新<br>数据来源：中国卫健委 卫生应急办公室</div>
 	<img class="map" src="https://img1.dxycdn.com/2020/0123/955/3392463567575166335-73.jpg" >
   </body>
