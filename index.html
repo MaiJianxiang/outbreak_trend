@@ -17,6 +17,12 @@
 			font-size: 14px;
 			line-height: 20px;
 		}
+		.map{
+			width: 100%;
+			max-width: 1125px;
+			display: block;
+			margin: 10px auto;
+		}
 		@media (max-width:767px){
 			h1{
 				font-size: 22px;
@@ -33,9 +39,9 @@
 	// 在一行中保存多个城市的数据，需要将数据转换成
     // {month: 'Jan', city: 'Tokyo', temperature: 3.9}
     const data = [
-      { date: '1月20日', 确诊: 291, 重症: null, 死亡: 6, 治愈:null },
-      { date: '1月21日', 确诊: 440, 重症: 102, 死亡: 9, 治愈:null },
-      { date: '1月22日', 确诊: null, 重症: null, 死亡: null, 治愈:null },
+      { date: '1月20日', 确诊: 291, 重症: null, 死亡: 6, 治愈:25 },
+      { date: '1月21日', 确诊: 440, 重症: 102, 死亡: 9, 治愈:28 },
+      { date: '1月22日', 确诊: 571, 重症: 95, 死亡: 17, 治愈:28 },
     ];
     const ds = new DataSet();
     const dv = ds.createView().source(data);
@@ -88,6 +94,6 @@
 	
 	
 	<div id="subtitle">数据统计截至1月22日24时<br>每日上午10:00更新<br>数据来源：中国卫健委 卫生应急办公室</div>
-	
+	<img class="map" src="https://img1.dxycdn.com/2020/0123/955/3392463567575166335-73.jpg" >
   </body>
 </html>
