@@ -4,6 +4,7 @@ const data = [
   { date: '1月20日', 确诊: 291, 重症: null, 死亡: 6, 治愈:25 },
   { date: '1月21日', 确诊: 440, 重症: 102, 死亡: 9, 治愈:28 },
   { date: '1月22日', 确诊: 571, 重症: 95, 死亡: 17, 治愈:28 },
+  { date: '1月23日', 确诊: 830, 重症: 177, 死亡: 25, 治愈:34 }
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
@@ -21,7 +22,7 @@ const chart = new G2.Chart({
 });
 chart.source(dv, {
   date: {
-	range: [ 0, .7 ]
+	range: [ 0, .8 ]
   }
 });
 chart.tooltip({

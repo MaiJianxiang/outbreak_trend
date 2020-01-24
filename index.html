@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>新型冠状病毒感染肺炎疫情趋势</title>
-	<link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-	<style type="text/css"> h1{ font-size: 32px; text-align: center; } @media (max-width:767px){ h1{ font-size: 22px; } } #subtitle{ color: #888; text-align: center; font-size: 14px; line-height: 20px; } .map{ width: 100%; max-width: 1125px; display: block; margin: 10px auto; } </style> 
-  </head>
-  <body>
-	<h1>新型冠状病毒感染肺炎疫情趋势</h1>
-	<div id="container" />
-	<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.11/dist/g2.min.js"></script>
-	<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.2/dist/data-set.min.js"></script>
-	<script src="chart.js" type="text/javascript" charset="utf-8"></script>
-	<div id="subtitle">数据统计截至1月22日24时<br>每日上午10:00更新<br>数据来源：中国卫健委 卫生应急办公室</div>
-	<img class="map" src="https://img1.dxycdn.com/2020/0123/955/3392463567575166335-73.jpg" >
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>新型冠状病毒感染肺炎疫情趋势</title>
+		<link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+		<style type="text/css"> h1 { font-size: 32px; text-align: center; } @media (max-width:767px) { h1 { font-size: 22px; } } .subtitle { color: #888; text-align: center; font-size: 14px; line-height: 20px; } #dxy{ text-align: center; } iframe{ width: 100%; max-width: 500px; height: 15000px; overflow: hidden; } </style>
+	</head>
+	<body>
+		<h1>新型冠状病毒感染肺炎疫情趋势</h1>
+		<div id="container" />
+		<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.11/dist/g2.min.js"></script>
+		<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.2/dist/data-set.min.js"></script>
+		<script src="chart.js" type="text/javascript" charset="utf-8"></script>
+		<div class="subtitle">以上数据统计截至1月23日24时<br>数据来源：中国卫健委 卫生应急办公室</div>
+		<div class="subtitle">以下为丁香园·丁香医生统计的疫情实时动态</div>
+		<div id="dxy">
+			<iframe src="https://3g.dxy.cn/newh5/view/pneumonia" frameborder="0"></iframe>
+		</div>
+	</body>
 </html>
