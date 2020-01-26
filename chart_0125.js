@@ -1,18 +1,19 @@
 // 在一行中保存多个城市的数据，需要将数据转换成
 // {month: 'Jan', city: 'Tokyo', temperature: 3.9}
 const data = [
-  { date: '1月20日', 确诊: 291, 重症: null, 死亡: 6, 治愈:25 },
-  { date: '1月21日', 确诊: 440, 重症: 102, 死亡: 9, 治愈:28 },
-  { date: '1月22日', 确诊: 571, 重症: 95, 死亡: 17, 治愈:28 },
-  { date: '1月23日', 确诊: 830, 重症: 177, 死亡: 25, 治愈:34 },
-  { date: '1月24日', 确诊: 1287, 重症: 237, 死亡: 41, 治愈:38 }
+  { date: '1月20日', 确诊: 291, 重症: null, 死亡: 6, 治愈:25, 疑似:null },
+  { date: '1月21日', 确诊: 440, 重症: 102, 死亡: 9, 治愈:28, 疑似:null },
+  { date: '1月22日', 确诊: 571, 重症: 95, 死亡: 17, 治愈:28, 疑似:393 },
+  { date: '1月23日', 确诊: 830, 重症: 177, 死亡: 25, 治愈:34, 疑似:1072 },
+  { date: '1月24日', 确诊: 1287, 重症: 237, 死亡: 41, 治愈:38, 疑似:1965 },
+  { date: '1月25日', 确诊: 1975, 重症: 324, 死亡: 56, 治愈:49, 疑似:2684 }
 ];
 const ds = new DataSet();
 const dv = ds.createView().source(data);
 // fold 方式完成了行列转换，如果不想使用 DataSet 直接手工转换数据即可
 dv.transform({
   type: 'fold',
-  fields: [ '确诊', '重症', '死亡', '治愈' ], // 展开字段集
+  fields: [ '确诊', '重症', '死亡', '治愈', '疑似' ], // 展开字段集
   key: 'type', // key字段
   value: 'value' // value字段
 });
@@ -41,12 +42,12 @@ chart.axis('value', {
 chart
   .line()
   .position('date*value')
-  .color('type', ['#178DF9', '#e00', '#422', '#0b0'])
+  .color('type', ['#178DF9', '#e00', '#422', '#0b0','#fd0'])
   .shape('smooth');
 chart
   .point()
   .position('date*value')
-  .color('type', ['#178DF9', '#e00', '#422', '#0b0'])
+  .color('type', ['#178DF9', '#e00', '#422', '#0b0','#fd0'])
   .size(4)
   .shape('circle')
   .style({
