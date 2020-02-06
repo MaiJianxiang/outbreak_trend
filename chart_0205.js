@@ -26,10 +26,12 @@ dv.transform({
   key: 'type', // key字段
   value: 'value' // value字段
 });
+// 实例化 Chart 对象
 const chart = new G2.Chart({
-  container: 'container',
-  forceFit: true,
-  height: 500
+  container: 'container',	  // 传入 dom 容器的 id
+  forceFit: true,			  // 图表跟随图表容器宽度变化
+  height: 500,				  // 指定图表的高度
+  padding: [ 20, 20, 110, 70 ] // 上，右，下，左
 });
 chart.source(dv, {
   date: {
@@ -51,12 +53,12 @@ chart.axis('value', {
 chart
   .line()
   .position('date*value')
-  .color('type', ['#f88', '#f00', '#b00', '#333', '#0b0', '#fd0'])
+  .color('type', ['#f99', '#f00', '#b00', '#333', '#0b0', '#fd0'])
   .shape('smooth');
 chart
   .point()
   .position('date*value')
-  .color('type', ['#f88', '#f00', '#b00', '#333', '#0b0', '#fd0'])
+  .color('type', ['#f99', '#f00', '#b00', '#333', '#0b0', '#fd0'])
   .size(4)
   .shape('circle')
   .style({
