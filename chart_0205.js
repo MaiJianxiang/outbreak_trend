@@ -51,12 +51,12 @@ chart.axis('value', {
 chart
   .line()
   .position('date*value')
-  .color('type', ['#f88', '#f00', '#b00', '#333', '#0b0','#fd0'])
+  .color('type', ['#f88', '#f00', '#b00', '#333', '#0b0', '#fd0'])
   .shape('smooth');
 chart
   .point()
   .position('date*value')
-  .color('type', ['#f88', '#f00', '#b00', '#333', '#0b0','#fd0'])
+  .color('type', ['#f88', '#f00', '#b00', '#333', '#0b0', '#fd0'])
   .size(4)
   .shape('circle')
   .style({
