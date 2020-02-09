@@ -69,7 +69,7 @@ chart
 	lineWidth: 1
   });
 chart.guide().dataMarker({		// 特殊数据标注点
-  position: ['2月5日', 24702],	// 标注点起始位置
+  position: ['5', 24702],	// 标注点起始位置
   content: '疑似病例标准修改',	// 显示的文本内容
   direction:'downward'			// 朝向，默认为upwaard
 });
