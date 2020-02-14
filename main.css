@@ -18,6 +18,10 @@ h1 {
 #share {
 	float: right;
 }
+span.befor {
+	width: 1.5em;
+	display: inline-block;
+}
 .at-icon-wrapper {
 	display: inline-block;
 	line-height: 16px; 
