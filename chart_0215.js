@@ -45,7 +45,7 @@ const chart = new G2.Chart({
 });
 chart.source(dv, {
   date: {
-	range: [ 0, .8 ]
+	range: [ 0, 1 ]
   }
 });
 chart.tooltip({
