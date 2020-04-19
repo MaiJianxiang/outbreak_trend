@@ -1,6 +1,28 @@
+body{
+  font-family: "arial, sans-serif";
+  padding-top: 1.4em;
+}
 h1 {
-	font-size: 32px;
+	font-size: 36px;
 	text-align: center;
+}
+hr {
+  margin: 20px auto;
+  max-width: 900px;
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+}
+.red {
+  color: #f00;
+}
+div#currentConfirmedCount {
+  text-align: center;
+  font-size: 200px;
+}
+div.currentConfirmedIncr,
+p.updateTime {
+  text-align: center;
 }
 #container {
 	max-width: 900px;
@@ -35,6 +57,7 @@ span.at-icon-wrapper {
 .at-icon {
 	fill: #fff;
 }
+/* 微信二维码 */
 div.dropdownBox {
 	display: none;
 	position: absolute;
@@ -56,8 +79,20 @@ div.dropdownBox>div {
 @media (max-width:767px) {
 	h1 {
 		font-size: 22px;
+    font-weight: normal;
 	}
+  hr {
+    margin-left: 5%;
+    margin-right: 5%;    
+  }
 	#share {
 		display: none;
 	}
+  .light {
+  	padding-left: 5%;
+  	padding-right: 5%;
+  }
+  div#currentConfirmedCount {
+    font-size: 72px;
+  }
 }

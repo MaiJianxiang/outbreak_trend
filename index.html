@@ -4,14 +4,30 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>新型冠状病毒肺炎中国疫情趋势</title>
+		<title>新型冠状病毒肺炎疫情</title>
 		<link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="main.min.css"/>
 		<base target="_blank" />
 	</head>
 	<body>
+    <p class="light updateTime">截至北京时间 <span class="updateTime"></span></p>
+    <h1>中国现有确诊病例</h1>
+    <div id="currentConfirmedCount"class="red"> </div>
+    <div class="currentConfirmedIncr">较昨日<span class="currentConfirmedIncr">变化数据待国家卫健委公布</span></div>
+    <script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js"></script>
+    <script>
+      $.getJSON("https://lab.isaaclin.cn/nCoV/api/overall",function(result){
+        $('#currentConfirmedCount').text(result.results[0].currentConfirmedCount);
+        if(result.results[0].currentConfirmedIncr){
+          $('span.currentConfirmedIncr').addClass("red").text(result.results[0].currentConfirmedIncr);}
+        let d = new Date();
+        d.setTime(result.results[0].updateTime);
+        $('span.updateTime').text(d.toLocaleString());
+      });
+    </script>
+    <hr>
 		<h1>新型冠状病毒肺炎中国疫情趋势</h1>
-		<div id="container" />
+		<div id="container" /><!-- 折线图 -->
 		<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.11/dist/g2.min.js"></script>
 		<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.2/dist/data-set.min.js"></script>
 		<script src="chart_0405.js" type="text/javascript" charset="utf-8"></script>
@@ -36,10 +52,12 @@
 		
 		<p class="light"><span class="befor">*</span>不含湖北临床诊断病例，含境外输入病例</p>
 		<p class="light"><span class="befor">**</span>含湖北临床诊断病例和境外输入病例</p>
-		<p class="light">以上数据统计截至4月5日24时，信息来自国家卫生健康委员会官方网站</p>
+		<p class="light">折线图数据统计截至4月5日24时，信息来自国家卫生健康委员会官方网站</p>
+    <hr>
+    <p class="light">相关链接：</p>
 		<a class="light" href="https://covid19.healthdata.org/united-states-of-america">IHME 疫情预测</a><br />
 		<a class="light" href="http://2019ncov.nosugartech.com/search.html">患者行程查询</a><br />
 		<a class="light" href="https://ishop.sogou.com/zhushou/2019-ncov">防疫用品全网搜</a>
-		
+		<br><br>
 	</body>
 </html>
