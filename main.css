@@ -17,6 +17,7 @@ hr {
   color: #f00;
 }
 div#currentConfirmedCount {
+  height: 230px;
   text-align: center;
   font-size: 200px;
 }

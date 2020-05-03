@@ -10,22 +10,25 @@
 		<base target="_blank" />
 	</head>
 	<body>
-    <p class="light updateTime">截至北京时间 <span class="updateTime"></span></p>
-    <h1>中国现有确诊病例</h1>
-    <div id="currentConfirmedCount"class="red"> </div>
-    <div class="currentConfirmedIncr">较昨日<span class="currentConfirmedIncr">变化数据待国家卫健委公布</span></div>
+    <div id="currentConfirmed" style="display: none;">
+      <p class="light updateTime">截至北京时间 <span class="updateTime"></span></p>
+      <h1>中国现有确诊病例</h1>
+      <div id="currentConfirmedCount"class="red"></div>
+      <div class="currentConfirmedIncr">较昨日<span class="currentConfirmedIncr">变化数据待国家卫健委公布</span></div>
+      <hr>
+    </div>
     <script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js"></script>
     <script>
-      $.getJSON("https://lab.isaaclin.cn/nCoV/api/overall",function(result){
+      $.getJSON("https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/json/DXYOverall.json",function(result){
         $('#currentConfirmedCount').text(result.results[0].currentConfirmedCount);
         if(result.results[0].currentConfirmedIncr){
           $('span.currentConfirmedIncr').addClass("red").text(result.results[0].currentConfirmedIncr);}
         let d = new Date();
         d.setTime(result.results[0].updateTime);
         $('span.updateTime').text(d.toLocaleString());
+        $('#currentConfirmed').slideDown(1000);
       });
     </script>
-    <hr>
 		<h1>新型冠状病毒肺炎中国疫情趋势</h1>
 		<div id="container" /><!-- 折线图 -->
 		<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.11/dist/g2.min.js"></script>
