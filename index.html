@@ -17,23 +17,23 @@
       <div class="currentConfirmedIncr">较昨日<span class="currentConfirmedIncr">变化数据待国家卫健委公布</span></div>
       <hr>
     </div>
-    <script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js"></script>
-    <script>
-      $.getJSON("https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/json/DXYOverall.json",function(result){
-        $('#currentConfirmedCount').text(result.results[0].currentConfirmedCount);
-        if(result.results[0].currentConfirmedIncr){
-          $('span.currentConfirmedIncr').addClass("red").text(result.results[0].currentConfirmedIncr);}
-        let d = new Date();
-        d.setTime(result.results[0].updateTime);
-        $('span.updateTime').text(d.toLocaleString());
-        $('#currentConfirmed').slideDown(1000);
-      });
-    </script>
 		<h1>新型冠状病毒肺炎中国疫情趋势</h1>
-		<div id="container" /><!-- 折线图 -->
+		<div id="container"></div> <!-- 折线图 -->
 		<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.5.11/dist/g2.min.js"></script>
 		<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.2/dist/data-set.min.js"></script>
 		<script src="chart_0405.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js"></script>
+		<script> //加载现有确诊数据的脚本
+		  $.getJSON("https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/json/DXYOverall.json",function(result){
+		    $('#currentConfirmedCount').text(result.results[0].currentConfirmedCount); //现有确诊病例数
+		    if(result.results[0].currentConfirmedIncr){
+		      $('span.currentConfirmedIncr').addClass("red").text(result.results[0].currentConfirmedIncr);} //现有确诊较昨日变化数
+		    let d = new Date();
+		    d.setTime(result.results[0].updateTime);
+		    $('span.updateTime').text(d.toLocaleString());
+		    $('#currentConfirmed').slideDown(1000);
+		  });
+		</script>
 		
 		<!-- 分享栏开始 -->
 		<div id="share">
