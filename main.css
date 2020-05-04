@@ -7,8 +7,8 @@ h1 {
 	text-align: center;
 }
 hr {
-  margin: 20px auto;
-  max-width: 900px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border: 0;
   height: 1px;
   background-color: #ccc;
@@ -24,21 +24,26 @@ div.currentConfirmedIncr,
 p.updateTime {
   text-align: center;
 }
-#container {
+.container {
 	max-width: 900px;
-	margin: 0 auto;
-}
-.light, #share {
-	color: #888;
-	font-size: 14px;
-	line-height: 1.6em;
-	max-width: 900px;
-	margin: 6px auto;
+  margin-left: auto;
+  margin-right: auto;
 	padding-left: 54px;
 	padding-right: 54px;
 }
+#lineChart {
+  margin-bottom: -50px;
+}
+.light {
+	color: #888;
+	font-size: 14px;
+	line-height: 1.6em;
+	margin: 6px auto;
+}
 #share {
 	float: right;
+  color: #888;
+  font-size: 14px;
 }
 span.befor {
 	width: 1.5em;
@@ -81,14 +86,13 @@ div.dropdownBox>div {
 		font-size: 22px;
     font-weight: normal;
 	}
-  hr {
-    margin-left: 5%;
-    margin-right: 5%;    
+  #lineChart {
+    margin-bottom: 0;
   }
 	#share {
 		display: none;
 	}
-  .light {
+  .container {
   	padding-left: 5%;
   	padding-right: 5%;
   }

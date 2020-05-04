@@ -88,10 +88,10 @@ dv.transform({
 });
 // 实例化 Chart 对象
 const chart = new G2.Chart({
-  container: 'container',	  // 传入 dom 容器的 id
+  container: 'lineChart',	  // 传入 dom 容器的 id
   forceFit: true,			  // 图表跟随图表容器宽度变化
   height: 500,				  // 指定图表的高度
-  padding: [ 20, 38, 110, 70 ] // 上，右，下，左
+  padding: [ 20, 38, 130, 70 ] // 上，右，下，左，注意移动端图例的位置
 });
 chart.source(dv, {
   date: {
