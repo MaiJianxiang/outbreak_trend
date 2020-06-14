@@ -21,8 +21,11 @@ div#currentConfirmedCount {
   font-size: 200px;
 }
 div.currentConfirmedIncr,
-p.updateTime {
+div.updateTime {
   text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .container {
 	max-width: 900px;
@@ -81,6 +84,15 @@ div.dropdownBox>div {
 	text-align: center;
 	margin-bottom: 5px;
 }
+#BingWidget {
+  max-width: 648px;
+  height: 724px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 以下为移动端(max-width:767px)样式 */
 @media (max-width:767px) {
 	h1 {
 		font-size: 22px;
@@ -99,4 +111,7 @@ div.dropdownBox>div {
   div#currentConfirmedCount {
     font-size: 72px;
   }
-}
+  #BingWidget {
+    height: 791px;
+  }
+}/* 移动端(max-width:767px)样式结束 */
