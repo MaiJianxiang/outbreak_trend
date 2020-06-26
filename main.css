@@ -89,7 +89,7 @@ div.dropdownBox>div {
 }
 #BingWidget {
   max-width: 650px;
-  height: 730px;
+  height: 745px;
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
@@ -115,6 +115,6 @@ div.dropdownBox>div {
     font-size: 72px;
   }
   #BingWidget {
-    height: 796px;
+    height: 694px;
   }
 }/* 移动端(max-width:767px)样式结束 */
