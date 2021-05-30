@@ -48,7 +48,11 @@
         .done(function(result){
           $('#currentConfirmedCount').text(result.results[0].currentConfirmedCount); //现有确诊病例数
           if(result.results[0].currentConfirmedIncr){
-            $('span.currentConfirmedIncr').addClass("red").text(result.results[0].currentConfirmedIncr);} //现有确诊较昨日变化数
+            if(result.results[0].currentConfirmedIncr > 0){
+              $('span.currentConfirmedIncr').addClass("red").text('+' + result.results[0].currentConfirmedIncr);} //现有确诊较昨日新增数
+            } else {
+              $('span.currentConfirmedIncr').addClass("red").text(result.results[0].currentConfirmedIncr); //现有确诊较昨日减少数
+            }
           let d = new Date();
           d.setTime(result.results[0].updateTime);
           $('span.updateTime').text(d.toLocaleString());
@@ -59,19 +63,30 @@
       
       	<p class="light"><span class="befor">*</span>不含湖北临床诊断病例，含境外输入病例</p>
       	<p class="light"><span class="befor">**</span>含湖北临床诊断病例和境外输入病例</p>
-      	<p class="light">折线图数据统计截至2020年4月5日24时，信息来自国家卫生健康委员会官方网站。</p>
-      	<p class="light">本站希望但不保证提供的数据准确。</p>
+      	<!-- <p class="light">折线图数据统计截至2020年4月5日24时，信息来自国家卫生健康委员会官方网站。</p>
+      	<p class="light">本站希望但不保证提供的数据准确。</p> -->
         <hr>
-        <p>夏天到了，病毒并没有消失。</p>
-        <div id="BingWidget">
-          <div class="bingwidget" data-type="covid19_stats_trends" data-market="zh-cn" data-language="zh-cn"></div>
-          <script src="https://www.bing.com/widget/bootstrap.answer.js" async=""></script>
+        <br>
+        <p>人类只有一个地球，各国共处一个世界。面对疫情，任何国家都不能独善其身。</p>
+        <p>世界各国应互帮互助，携手共同抗击疫情。</p>
+        <br>
+        
+        <div id="flexBox">
+          <div id="BingWidget">
+            <div id="overlaytitle">新型冠状病毒全球抗疫趋势</div>
+            <div class="bingwidget" data-type="covid19_stats_trends" data-market="zh-cn" data-language="zh-cn"></div>
+            <script src="https://www.bing.com/widget/bootstrap.answer.js" async=""></script>
+          </div>
+          <div id="relatedLinksBox">
+            <p>相关链接</p>
+            <a class="link" href="http://2019ncov.nosugartech.com/search.html">患者行程查询</a><br />
+            <a class="link" href="https://covid19.healthdata.org/global?view=cumulative-deaths&tab=trend">IHME 疫情预测</a><br />
+            <br />
+          </div>
         </div>
-        <hr>
-        <p class="light">相关链接：</p>
-      	<a class="light" href="https://covid19.healthdata.org/united-states-of-america">IHME 疫情预测</a><br />
-      	<a class="light" href="http://2019ncov.nosugartech.com/search.html">患者行程查询</a>
-      	<br><br>
+        
+      	<br>
+        <br>
       
     </div>
 	</body>

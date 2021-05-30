@@ -8,6 +8,7 @@ h1 {
 }
 p {
   font-size: 18px;
+  line-height: 2em;
 }
 hr {
   margin-top: 20px;
@@ -73,7 +74,7 @@ div.dropdownBox {
 	display: none;
 	position: absolute;
 	left: -70px;
-	top: -162px;
+	top: 40px;
 	background-color: #fff;
 	border: 1px solid #e5e9ef;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,.14);
@@ -87,12 +88,39 @@ div.dropdownBox>div {
 	text-align: center;
 	margin-bottom: 5px;
 }
+#flexBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
 #BingWidget {
-  max-width: 650px;
-  height: 745px;
+  position: relative;
+  width: 650px;
+  min-width: 650px;
+  height: 680px;
   overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
+  flex: 650;
+}
+#overlaytitle {
+  position: absolute;
+  top: 10px;
+  margin-left: 2px;
+  padding-left: 18px;
+  line-height: 40px;
+  font-size: 25px;
+  width: 400px;
+  background-color: #fff;
+}
+#relatedLinksBox {
+  padding: 0 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  flex: 180;
+}
+a.link {
+  line-height: 2em;
 }
 
 /* 以下为移动端(max-width:767px)样式 */
@@ -115,6 +143,20 @@ div.dropdownBox>div {
     font-size: 72px;
   }
   #BingWidget {
+    width: 100%;
+    min-width: 0;
     height: 694px;
+    margin-left: auto;
+    margin-right: auto;
+    flex: none;
+  }
+  #overlaytitle {
+    top: 16px;
+    line-height: 45px;
+  }
+  #relatedLinksBox {
+    flex: none;
+    margin: 20px auto;
+    width: 80%;
   }
 }/* 移动端(max-width:767px)样式结束 */
